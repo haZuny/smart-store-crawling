@@ -16,6 +16,7 @@ driver.get(url)
 
 ### next page
 btn = driver.find_element(By.XPATH, '//*[@id="CategoryProducts"]/div[3]/a[3]')
+
 ActionChains(driver).click(btn).perform()
 
 time.sleep(1)
@@ -27,6 +28,8 @@ soup = BeautifulSoup(driver.page_source, 'html.parser')
 print()
 print()
 selected = soup.select("div#CategoryProducts>ul>li>div._1vVKEk_wsi>strong")
+for s in selected:
+    print(s.string)
 print(selected)
 
 # print(driver)
