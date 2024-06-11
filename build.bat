@@ -1,0 +1,1 @@
+pyinstaller -w -F --icon="./ss-crawler/resources/mk.ico" --add-data="./ss-crawler/resources/*;./ss-crawler/resources" ./ss-crawler/main.py

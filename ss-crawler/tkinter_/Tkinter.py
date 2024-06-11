@@ -12,6 +12,7 @@ import GLOBAL_VAL
 ### ect.
 from datetime import datetime
 import os
+import sys
 
 class Tkinter:
 
@@ -23,7 +24,7 @@ class Tkinter:
         ### tkinter setting
         self.window = tk.Tk("SS-Crawler")
         self.window.title("SS-Crawler for MKShop")
-        icon = tk.PhotoImage(file=os.path.dirname(os.path.realpath(__file__)).replace("\\", "/") + "/mk.png")
+        icon = tk.PhotoImage(file=GLOBAL_VAL.resource_path("./ss-crawler/resources/mk.png"))
         self.window.iconphoto(True, icon)
 
         ### Component setting
@@ -68,11 +69,12 @@ class Tkinter:
 
             # notice and kill program
             msgbox.showinfo("Success", "파일이 성공적으로 저장되었습니다.")
-            exit()
+            sys.exit()
         
         ### errer case
         except Exception as e:
             msgbox.showerror("Error", "도중에 문제가 발생했습니다.\n다시 시도해주세요")
             print(e)
+
         
     
