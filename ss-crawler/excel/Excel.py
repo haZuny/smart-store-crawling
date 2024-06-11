@@ -25,6 +25,8 @@ class Excel:
     def save(self):
         self.wb.save(self.fileName)
 
+                    
+
     
     ### create excel file and insert data
     def createAndInsertData(self, row, column, rowGap, values):
