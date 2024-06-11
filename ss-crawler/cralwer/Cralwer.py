@@ -7,9 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 
 ### import selenium
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver import ActionChains
 
 ### Interface class
 class Cralwer():
@@ -51,7 +49,7 @@ class Cralwer():
     # click next page button and update page data source. False: lastPage
     def updateNextPageSource(self, driver, nextBtnsXpath_form):
         isLast = self.clickNextPage(driver, nextBtnsXpath_form)
-        time.sleep(1)
+        time.sleep(2)
         self.updatePageSource(driver)
         return isLast
 
@@ -124,35 +122,5 @@ class Cralwer():
 
 
 
-class HyunstorymallCralwer(Cralwer):
-    
 
-    def __init__(self):
-        # pageUrl
-        self.pageUrl = 'https://smartstore.naver.com/hyunstorymall/category/ALL?st=TOTALSALE&dt=LIST&page=1&size=80'
-        # Xpath form about next Buttons
-        self.nextBtnsXpath_form = '//*[@id="CategoryProducts"]/div[3]/*'
-        # beautifulSoup find style about a name of product
-        self.productNameStyle = 'div#CategoryProducts>ul>li._3S7Ho5J2Ql>div._1vVKEk_wsi>strong._1Zvjahn0GA'
-        # beautifulSoup find style about a price of product
-        self.productPriceStyle = 'div#CategoryProducts>ul>li._3S7Ho5J2Ql>div._1vVKEk_wsi>div>strong._22XUYkkUGJ>span._3_9J443eIx'
-        # beautifulSoup find style about the product list of current page.
-        self.productListStyle = 'div#CategoryProducts>ul>li._3S7Ho5J2Ql'
-        # html element form about review can be used to define the product has review
-        self.reviewElement = '<span class="_2AHonHjEgF">리뷰</span>'
 
-        # seleniup driver
-        self.driver = webdriver.Chrome()
-        self.driver.get(self.pageUrl)
-
-        # beautifulSoup page source
-        self.updatePageSource(self.driver)
-
-    # def test(self):
-    #     self.updateNextPageSource(self.driver, self.nextBtnsXpath_form)
-    #     # self.updateNextPageSource(self.driver, self.nextBtnsXpath_form)
-    #     # self.updateNextPageSource(self.driver, self.nextBtnsXpath_form)
-    #     print(self.getPruductNames(self.pageSource, self.productNameStyle))
-
-a = HyunstorymallCralwer()
-a.getProductsUntilLastReview(a.driver)
