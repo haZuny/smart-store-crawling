@@ -11,16 +11,20 @@ import GLOBAL_VAL
 
 ### ect.
 from datetime import datetime
+import os
 
 class Tkinter:
 
     def __init__(self, shopList):
+
         ### Reset
         self.shopList = shopList
         
         ### tkinter setting
         self.window = tk.Tk("SS-Crawler")
-        self.window.title("SS-Crawler")
+        self.window.title("SS-Crawler for MKShop")
+        icon = tk.PhotoImage(file=os.path.dirname(os.path.realpath(__file__)).replace("\\", "/") + "/mk.png")
+        self.window.iconphoto(True, icon)
 
         ### Component setting
         # Combo Box
