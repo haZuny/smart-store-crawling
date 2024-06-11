@@ -112,8 +112,6 @@ class Cralwer():
         dict['names'] = nameList[:lastIdx+1]
         dict['prices'] = priceList[:lastIdx+1]
 
-        print(len(dict['names']))
-        print(dict)
         return dict
 
 
