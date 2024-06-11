@@ -3,4 +3,4 @@
 
 
 # Download
-- [version 1.2]([https://github.com/haZuny/smart-store-crawling/blob/main/exe_files/version_1.2.exe](https://github.com/haZuny/smart-store-crawling/raw/main/exe_files/version_1.2.exe))
+- [version 1.2](https://github.com/haZuny/smart-store-crawling/raw/main/exe_files/version_1.2.exe)
