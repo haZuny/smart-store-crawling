@@ -4,7 +4,7 @@ from . import Cralwer
 ### Selenium webdriver
 from selenium import webdriver
 
-class HyunstorymallCralwer(Cralwer.Cralwer):
+class NaverSmartStoreCralwer(Cralwer.Cralwer):
     def __init__(self):
         # pageUrl
         self.pageUrl = 'https://smartstore.naver.com/hyunstorymall/category/ALL?st=TOTALSALE&dt=LIST&page=1&size=80'

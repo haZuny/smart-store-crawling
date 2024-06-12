@@ -1,4 +1,4 @@
-from cralwer import HyunstorymallCralwer
+from cralwer import NaverSmartStoreCralwer
 from excel import Excel
 from tkinter_ import Tkinter
 import GLOBAL_VAL

@@ -5,7 +5,7 @@ from tkinter import filedialog
 from tkinter import messagebox as msgbox
 
 ### about project files
-from cralwer import HyunstorymallCralwer
+from cralwer import NaverSmartStoreCralwer
 from excel import Excel
 import GLOBAL_VAL
 
@@ -54,7 +54,7 @@ class Tkinter:
         try:
             # Select Crawler
             if self.shopComboBox.get() == GLOBAL_VAL.HYUNSTORYMALL:
-                crawler = HyunstorymallCralwer.HyunstorymallCralwer()
+                crawler = NaverSmartStoreCralwer.NaverSmartStoreCralwer()
 
             # Crawling page data
             crawledData = crawler.getProductsUntilLastReview(crawler.driver)

@@ -1,5 +1,5 @@
 ### Shop name
-HYUNSTORYMALL = "현스토리몰"
+NaverSmartStoreCralwer = "네이버스마트스토어"
 
 ### get abs
 import os
