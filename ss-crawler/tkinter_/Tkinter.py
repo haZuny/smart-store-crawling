@@ -16,28 +16,72 @@ import sys
 
 class Tkinter:
 
-    def __init__(self, shopList):
-
-        ### Reset
-        self.shopList = shopList
+    def __init__(self, ):
         
         ### tkinter setting
         self.window = tk.Tk("SS-Crawler")
         self.window.title("SS-Crawler for MKShop")
+        self.window.geometry("450x100")
         icon = tk.PhotoImage(file=GLOBAL_VAL.resource_path("./ss-crawler/resources/mk.png"))
         self.window.iconphoto(True, icon)
 
-        ### Component setting
-        # Combo Box
-        self.shopComboBox = shopComboBox = ttk.Combobox(self.window)
-        shopComboBox.config(values=shopList, state="readonly")
-        shopComboBox.set(shopList[0])
-        shopComboBox.grid(row=0, column=0, columnspan=5, padx=20, pady=20)
+        ### URL Entry setting
+        # Label
+        self.urlLable = tk.Label(self.window, text='URL')
+        self.urlLable.grid(row=0, column=0, columnspan=4, sticky='W')
+        # Blank
+        self.urlBlank = tk.Label(self.window, text='')
+        self.urlBlank.grid(row=0, column=4, sticky='W')
+        # Entry
+        self.urlEntry = tk.Entry(self.window, width='50')
+        self.urlEntry.grid(row=0, column=5, columnspan=7, sticky='W')
 
+        ### Page cnt Entry setting
+        # Label
+        self.pageCntLable = tk.Label(self.window, text='최대 페이지')
+        self.pageCntLable.grid(row=1, column=0, columnspan=4, sticky='W')
+        # Blank
+        self.pageCntBlank = tk.Label(self.window, text='')
+        self.pageCntBlank.grid(row=1, column=4, sticky='W')
+        # Entry
+        self.pageCntEntry = tk.Entry(self.window)
+        self.pageCntEntry.grid(row=1, column=5, columnspan=4, sticky='W')
+
+        ### Max products cnt Setting
+        # Label
+        self.productCntLable = tk.Label(self.window, text='몇개씩 보기')
+        self.productCntLable.grid(row=2, column=0, columnspan=4, sticky='W')
+        # Blank
+        self.productCntBlank = tk.Label(self.window, text='')
+        self.productCntBlank.grid(row=2, column=4, sticky='W')
+        # ComboBox
+        self.productCntList = [20, 40, 60, 80]
+        self.productCntCombobox = ttk.Combobox(self.window)
+        self.productCntCombobox.config(values=self.productCntList, state='readonly')
+        self.productCntCombobox.set('80')
+        self.productCntCombobox.grid(row=2, column=5, columnspan=4, sticky='W')
+
+        ### Align Setting
+        # Label
+        self.alignLable = tk.Label(self.window, text='정렬 기준')
+        self.alignLable.grid(row=3, column=0, columnspan=4, sticky='W')
+        # Blank
+        self.alignBlank = tk.Label(self.window, text='')
+        self.alignBlank.grid(row=3, column=4, sticky='W')
+        # ComboBox
+        self.alignList = ['인기도순', '최신등록순', '낮은가격순', '높은가격순',
+                          '할인률순', '누적판매순', '리뷰많은순', '평점높은순']
+        self.alignCombobox = ttk.Combobox(self.window)
+        self.alignCombobox.config(values=self.alignList, state='readonly')
+        self.alignCombobox.set('누적판매순')
+        self.alignCombobox.grid(row=3, column=5, columnspan=4, sticky='W')
+
+        # ### Button Setting
         # Button
-        saveBtn = tk.Button(self.window, text="추출")
+        saveBtn = tk.Button(self.window, text="추출", overrelief='solid',
+                            padx='30', pady='10', bg='light cyan')
         saveBtn.config(command=self.saveBtnEvent)
-        saveBtn.grid(row=0, column=5, columnspan=2, padx=20, pady=20, ipadx=20)
+        saveBtn.grid(row=2, column=10, columnspan=4, rowspan=2)
         
         # Run
         self.window.mainloop()
@@ -76,5 +120,5 @@ class Tkinter:
             msgbox.showerror("Error", "도중에 문제가 발생했습니다.\n다시 시도해주세요")
             print(e)
 
-        
+    
     
