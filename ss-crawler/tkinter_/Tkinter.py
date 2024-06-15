@@ -59,6 +59,7 @@ class Tkinter:
         # Entry
         self.pageCntEntry = tk.Entry(self.window)
         self.pageCntEntry.insert(0, '1')
+        self.pageCntEntry.bind("<KeyRelease>",self.pageCntEntryEventListener)
         self.pageCntEntry.grid(row=1, column=5, columnspan=4, sticky='W')
 
         ### Max products cnt Setting
@@ -132,10 +133,18 @@ class Tkinter:
         
         ### errer case
         except Exception as e:
-            msgbox.showerror("Error", "도중에 문제가 발생했습니다.\n다시 시도해주세요")
+            msgbox.showerror("Error", "도중에 문제가 발생했습니다.\n다시 시도해주세요.")
             print(traceback.format_exc())
 
     ### About Event Listener
+    def pageCntEntryEventListener(self, event):
+        val = self.pageCntEntry.get()
+        if len(val) >= 1:
+            lastChar = val[-1]
+            if not (ord(lastChar) >= ord('0') and ord(lastChar) <= ord('9')):
+                msgbox.showwarning("Notice!", "최대 페이지 칸에는 '숫자만' 입력해주세요.")
+                self.pageCntEntry.delete(len(val)-1)
+        
     def productCntComboboxEventListener(self, event):
         size = self.productCntCombobox.get()
         self.setUrlParams('size', size)
