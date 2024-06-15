@@ -85,6 +85,7 @@ class Tkinter:
         self.alignCombobox = ttk.Combobox(self.window)
         self.alignCombobox.config(values=self.alignList, state='readonly')
         self.alignCombobox.set('누적판매순')
+        self.alignCombobox.bind("<<ComboboxSelected>>", self.alignConboboxEventListener)
         self.alignCombobox.grid(row=3, column=5, columnspan=4, sticky='W')
 
         # ### Button Setting
@@ -134,6 +135,10 @@ class Tkinter:
     def productCntComboboxEventListener(self, event):
         size = self.productCntCombobox.get()
         self.setUrlParams('size', size)
+
+    def alignConboboxEventListener(self, event):
+        align = self.alignCombobox.get()
+        self.setUrlParams('st', align)
 
 
     ### About URL
