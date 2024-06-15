@@ -101,7 +101,7 @@ class Tkinter:
         
         # Select save path
         savePath = filedialog.asksaveasfilename(filetypes=(("Excel files", "*.xlsx"),), title="파일 저장 경로 선택",
-                                           initialfile=datetime.today().strftime("%Y_%m_%d_%H_%m") + ".xlsx" )
+                                           initialfile=datetime.today().strftime("%Y_%m_%d_%H_%m_%s") + ".xlsx" )
         if savePath == "":
             return
 
@@ -123,7 +123,6 @@ class Tkinter:
 
             # notice and kill program
             msgbox.showinfo("Success", "파일이 성공적으로 저장되었습니다.")
-            sys.exit()
         
         ### errer case
         except Exception as e:
