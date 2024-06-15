@@ -103,38 +103,6 @@ class Tkinter:
         # Run
         self.window.mainloop()
 
-    ### event method when saveButton is clicked
-    def saveBtnEvent(self, event=None):
-        
-        # Select save path
-        savePath = filedialog.asksaveasfilename(filetypes=(("Excel files", "*.xlsx"),), title="파일 저장 경로 선택",
-                                           initialfile=datetime.today().strftime("%Y_%m_%d_%H_%m_%S") + ".xlsx" )
-        if savePath == "":
-            return
-
-        try:
-            # Create Crawler
-            url = self.getFullURL(self.getDefaultUrl(), self.urlParams)
-            crawler = NaverSmartStoreCralwer.NaverSmartStoreCralwer(url)
-
-            # Crawling page data
-            crawledData = crawler.getProductsUntilLastReview(crawler.driver, int(self.pageCntEntry.get()))
-            values = []
-            for i in range(len(crawledData['names'])):
-                row = [i+1, crawledData['names'][i], crawledData['prices'][i]]
-                values.append(row)
-
-            # Save as excel file
-            excel = Excel.Excel(savePath)
-            excel.createAndInsertData(row=2, column=2, rowGap=3, values=values)
-
-            # notice and kill program
-            msgbox.showinfo("Success", "파일이 성공적으로 저장되었습니다.")
-        
-        ### errer case
-        except Exception as e:
-            msgbox.showerror("Error", "도중에 문제가 발생했습니다.\n다시 시도해주세요.")
-            print(traceback.format_exc())
 
     ### About Event Listener
     def pageCntEntryEventListener(self, event):
@@ -171,3 +139,45 @@ class Tkinter:
             self.param_st = self.paramStMap[value]
 
         self.urlParams = self.urlParamsDefault + "&size=" + self.param_size + "&st="+self.param_st
+
+
+    ### event method when saveButton is clicked
+    def saveBtnEvent(self, event=None):
+
+        # null 처리
+        if self.urlEntry.get() == "":
+            msgbox.showwarning("Notice!","페이지의 URL을 입력해 주세요.")
+            return
+        elif self.pageCntEntry.get() == "":
+            msgbox.showwarning("Notice!", "최대 탐색 페이지를 입력해주세요.")
+            return
+        
+        # Select save path
+        savePath = filedialog.asksaveasfilename(filetypes=(("Excel files", "*.xlsx"),), title="파일 저장 경로 선택",
+                                           initialfile=datetime.today().strftime("%Y_%m_%d_%H_%m_%S") + ".xlsx" )
+        if savePath == "":
+            return
+
+        try:
+            # Create Crawler
+            url = self.getFullURL(self.getDefaultUrl(), self.urlParams)
+            crawler = NaverSmartStoreCralwer.NaverSmartStoreCralwer(url)
+
+            # Crawling page data
+            crawledData = crawler.getProductsUntilLastReview(crawler.driver, int(self.pageCntEntry.get()))
+            values = []
+            for i in range(len(crawledData['names'])):
+                row = [i+1, crawledData['names'][i], crawledData['prices'][i]]
+                values.append(row)
+
+            # Save as excel file
+            excel = Excel.Excel(savePath)
+            excel.createAndInsertData(row=2, column=2, rowGap=3, values=values)
+
+            # notice and kill program
+            msgbox.showinfo("Success", "파일이 성공적으로 저장되었습니다.")
+        
+        ### errer case
+        except Exception as e:
+            msgbox.showerror("Error", "도중에 문제가 발생했습니다.\n다시 시도해주세요.")
+            print(traceback.format_exc())
