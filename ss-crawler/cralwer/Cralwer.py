@@ -95,7 +95,7 @@ class Cralwer():
             nameList += self.getPruductNames(self.pageSource, self.productNameStyle)
             priceList += self.getPruductPrices(self.pageSource, self.productPriceStyle)
             reviewList += self.getReviewBoolean(self.pageSource, self.productListStyle, self.reviewElement)
-        if (self.currentPageCnt < max_page):
+        if (self.currentPageCnt <= max_page):
             nameList += self.getPruductNames(self.pageSource, self.productNameStyle)
             priceList += self.getPruductPrices(self.pageSource, self.productPriceStyle)
             reviewList += self.getReviewBoolean(self.pageSource, self.productListStyle, self.reviewElement)
