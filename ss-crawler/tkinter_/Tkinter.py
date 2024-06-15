@@ -101,7 +101,7 @@ class Tkinter:
         
         # Select save path
         savePath = filedialog.asksaveasfilename(filetypes=(("Excel files", "*.xlsx"),), title="파일 저장 경로 선택",
-                                           initialfile=datetime.today().strftime("%Y_%m_%d_%H_%m_%s") + ".xlsx" )
+                                           initialfile=datetime.today().strftime("%Y_%m_%d_%H_%m_%S") + ".xlsx" )
         if savePath == "":
             return
 
@@ -114,7 +114,7 @@ class Tkinter:
             crawledData = crawler.getProductsUntilLastReview(crawler.driver, int(self.pageCntEntry.get()))
             values = []
             for i in range(len(crawledData['names'])):
-                row = [crawledData['names'][i], crawledData['prices'][i]]
+                row = [i+1, crawledData['names'][i], crawledData['prices'][i]]
                 values.append(row)
 
             # Save as excel file

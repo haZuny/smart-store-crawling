@@ -90,14 +90,15 @@ class Cralwer():
         priceList += self.getPruductPrices(self.pageSource, self.productPriceStyle)
         reviewList += self.getReviewBoolean(self.pageSource, self.productListStyle, self.reviewElement)
 
-        # 마지막 페이지나, 최대 페이지 까지만 페이지 업데이트
+        # 마지막 페이지가 존재하고, 최대 페이지 이전이면 다음 페이지로 이동후 크롤링
         while(self.updateNextPageSource(driver, self.nextBtnsXpath_form) and self.currentPageCnt < max_page):
             nameList += self.getPruductNames(self.pageSource, self.productNameStyle)
             priceList += self.getPruductPrices(self.pageSource, self.productPriceStyle)
             reviewList += self.getReviewBoolean(self.pageSource, self.productListStyle, self.reviewElement)
-        nameList += self.getPruductNames(self.pageSource, self.productNameStyle)
-        priceList += self.getPruductPrices(self.pageSource, self.productPriceStyle)
-        reviewList += self.getReviewBoolean(self.pageSource, self.productListStyle, self.reviewElement)
+        if (self.currentPageCnt < max_page):
+            nameList += self.getPruductNames(self.pageSource, self.productNameStyle)
+            priceList += self.getPruductPrices(self.pageSource, self.productPriceStyle)
+            reviewList += self.getReviewBoolean(self.pageSource, self.productListStyle, self.reviewElement)
         
         # 마지막 인덱스 탐색
         lastIdx = len(reviewList)-1
