@@ -25,6 +25,7 @@ class Tkinter:
     urlParamsDefault = '?page=1&dt=LIST'
     urlParams = "?page=1&dt=LIST&size=80&st=TOTALSALE"
 
+
     def __init__(self, ):
         
         ### tkinter setting
@@ -33,6 +34,9 @@ class Tkinter:
         self.window.geometry("450x100")
         icon = tk.PhotoImage(file=GLOBAL_VAL.resource_path("./ss-crawler/resources/mk.png"))
         self.window.iconphoto(True, icon)
+
+        ### Keyboard Event
+        self.window.bind("<Return>", self.saveBtnEvent)
 
         ### URL Entry setting
         # Label
@@ -99,7 +103,7 @@ class Tkinter:
         self.window.mainloop()
 
     ### event method when saveButton is clicked
-    def saveBtnEvent(self):
+    def saveBtnEvent(self, event=None):
         
         # Select save path
         savePath = filedialog.asksaveasfilename(filetypes=(("Excel files", "*.xlsx"),), title="파일 저장 경로 선택",
