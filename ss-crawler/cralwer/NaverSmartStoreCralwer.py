@@ -5,9 +5,9 @@ from . import Cralwer
 from selenium import webdriver
 
 class NaverSmartStoreCralwer(Cralwer.Cralwer):
-    def __init__(self):
+    def __init__(self, pageUrl):
         # pageUrl
-        self.pageUrl = 'https://smartstore.naver.com/hyunstorymall/category/ALL?st=TOTALSALE&dt=LIST&page=1&size=80'
+        self.pageUrl = pageUrl
         # Xpath form about next Buttons
         self.nextBtnsXpath_form = '//*[@id="CategoryProducts"]/div[3]/*'
         # beautifulSoup find style about a name of product

@@ -13,8 +13,17 @@ import GLOBAL_VAL
 from datetime import datetime
 import os
 import sys
+import traceback    # pring errer line
 
 class Tkinter:
+
+    ### URL Parameter Variable
+    param_size = '80'
+    param_st = 'TOTALSALE'
+    paramStMap = {'인기도순':'POPULAR', '최신등록순':'RECENT', '낮은가격순':'LOW_DISP_PRICE', '높은가격순':'HIGH_DISP_PRICE',
+                 '할인율순':'DISCOUNT_RATE', '누적판매순':'TOTALSALE', '리뷰많은순':'REVIEW', '평점높은순':'SATISFACTION'}
+    urlParamsDefault = '?page=1&dt=LIST'
+    urlParams = "?page=1&dt=LIST&size=80&st=TOTALSALE"
 
     def __init__(self, ):
         
@@ -45,6 +54,7 @@ class Tkinter:
         self.pageCntBlank.grid(row=1, column=4, sticky='W')
         # Entry
         self.pageCntEntry = tk.Entry(self.window)
+        self.pageCntEntry.insert(0, '1')
         self.pageCntEntry.grid(row=1, column=5, columnspan=4, sticky='W')
 
         ### Max products cnt Setting
@@ -70,7 +80,7 @@ class Tkinter:
         self.alignBlank.grid(row=3, column=4, sticky='W')
         # ComboBox
         self.alignList = ['인기도순', '최신등록순', '낮은가격순', '높은가격순',
-                          '할인률순', '누적판매순', '리뷰많은순', '평점높은순']
+                          '할인율순', '누적판매순', '리뷰많은순', '평점높은순']
         self.alignCombobox = ttk.Combobox(self.window)
         self.alignCombobox.config(values=self.alignList, state='readonly')
         self.alignCombobox.set('누적판매순')
@@ -91,17 +101,17 @@ class Tkinter:
         
         # Select save path
         savePath = filedialog.asksaveasfilename(filetypes=(("Excel files", "*.xlsx"),), title="파일 저장 경로 선택",
-                                           initialfile=datetime.today().strftime("%Y_%m_%d") + "_" + self.shopComboBox.get() + ".xlsx" )
+                                           initialfile=datetime.today().strftime("%Y_%m_%d_%H_%m") + ".xlsx" )
         if savePath == "":
             return
 
         try:
-            # Select Crawler
-            if self.shopComboBox.get() == GLOBAL_VAL.HYUNSTORYMALL:
-                crawler = NaverSmartStoreCralwer.NaverSmartStoreCralwer()
+            # Create Crawler
+            url = self.getFullURL(self.getDefaultUrl(), self.urlParams)
+            crawler = NaverSmartStoreCralwer.NaverSmartStoreCralwer(url)
 
             # Crawling page data
-            crawledData = crawler.getProductsUntilLastReview(crawler.driver)
+            crawledData = crawler.getProductsUntilLastReview(crawler.driver, int(self.pageCntEntry.get()))
             values = []
             for i in range(len(crawledData['names'])):
                 row = [crawledData['names'][i], crawledData['prices'][i]]
@@ -118,7 +128,23 @@ class Tkinter:
         ### errer case
         except Exception as e:
             msgbox.showerror("Error", "도중에 문제가 발생했습니다.\n다시 시도해주세요")
-            print(e)
+            print(traceback.format_exc())
 
+
+    ### About URL
+    def getDefaultUrl(self):
+        url = self.urlEntry.get()
+        defaultUrl = url.split("?")[0]
+        return defaultUrl
     
+    def getFullURL(self, defaultUrl, parameter):
+        return defaultUrl + parameter
     
+    # change url parameter
+    def setUrlParams(self, parameter, value):
+        if parameter == 'size':
+            self.param_size = value
+        elif parameter == 'st':
+            self.param_st = self.paramStMap[value]
+
+        self.urlParams = self.urlParamsDefault + "&size=" + self.param_size + "&st="+self.param_st
