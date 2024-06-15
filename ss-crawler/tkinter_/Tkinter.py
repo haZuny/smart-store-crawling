@@ -69,6 +69,7 @@ class Tkinter:
         self.productCntCombobox = ttk.Combobox(self.window)
         self.productCntCombobox.config(values=self.productCntList, state='readonly')
         self.productCntCombobox.set('80')
+        self.productCntCombobox.bind("<<ComboboxSelected>>", self.productCntComboboxEventListener)
         self.productCntCombobox.grid(row=2, column=5, columnspan=4, sticky='W')
 
         ### Align Setting
@@ -128,6 +129,11 @@ class Tkinter:
         except Exception as e:
             msgbox.showerror("Error", "도중에 문제가 발생했습니다.\n다시 시도해주세요")
             print(traceback.format_exc())
+
+    ### About Event Listener
+    def productCntComboboxEventListener(self, event):
+        size = self.productCntCombobox.get()
+        self.setUrlParams('size', size)
 
 
     ### About URL
