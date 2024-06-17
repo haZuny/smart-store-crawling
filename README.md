@@ -16,11 +16,11 @@
 # 다운로드 방법
 1. 위의 ***Download*** 탭에서, 원하는 버전의 zip 파일 다운
 2. 다운받은 zip 파일의 압축 해제
-3. 해당 폴더 안의 `SS-Crawler.exe` 파일 실행
-   ![image](https://github.com/haZuny/smart-store-crawling/assets/64102831/7211242a-90e3-420e-850f-6b6ff6ff5d1f)
+3. 해당 폴더 안의 `SS-Crawler.exe` 파일 실행<br>
+   ![image](https://github.com/haZuny/smart-store-crawling/assets/64102831/7211242a-90e3-420e-850f-6b6ff6ff5d1f)<br>
    
-5. [**만약 window 경고가 뜰 경우**]
-   ![image](https://github.com/haZuny/smart-store-crawling/assets/64102831/2599164c-e48f-47b6-be17-b1953c47cf87)
+5. [**만약 window 경고가 뜰 경우**]<br>
+   ![image](https://github.com/haZuny/smart-store-crawling/assets/64102831/2599164c-e48f-47b6-be17-b1953c47cf87)<br>
    1. `추가 정보` 클릭
    2. `실행` 클릭
 
