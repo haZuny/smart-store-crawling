@@ -3,7 +3,6 @@ from abc import abstractmethod
 import time
 
 ### import bs4
-import requests
 from bs4 import BeautifulSoup
 
 ### import selenium
