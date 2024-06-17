@@ -8,13 +8,17 @@
 # Download
 - [version 1.2](https://github.com/haZuny/smart-store-crawling/raw/main/exe_files/version_1.2.exe)
 - [version 2.1](https://github.com/haZuny/smart-store-crawling/raw/main/exe_files/version_2.1.exe)
+- [version 2.2](https://github.com/haZuny/smart-store-crawling/raw/main/exe_files/version_2.2.exe)
 
 
 <br>
 
 
 # Update Logs
-- ***verseion 2.1***
+- ***version 2.2***
+  - 프로그램이 바이러스로 인식되어 다운로드 안되는 문제 해결
+    
+- ***version 2.1***
   - 쇼핑몰의 주소를 입력하면, 해당 쇼핑몰의 상품 리스트를 저장하도록 수정(네이버 스마트스토어 한정)
   - 최대 탐색 페이지 설정 가능
   - 몇개씩 보기 설정 가능
