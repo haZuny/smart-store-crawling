@@ -5,8 +5,9 @@ import openpyxl.drawing.image
 import openpyxl.styles
 import openpyxl.utils
 from openpyxl.drawing.image import Image
+from PIL import Image as pi
 
-import urllib.request
+import requests
 
 class Excel:
 
@@ -27,11 +28,9 @@ class Excel:
 
     ### insert image from url
     def insertImageFromURL(self, row, column, imgUrl, imgSizeWidth, imgSizeHeight):
-        imgFileName = './temp/'+str(row)+"_"+str(column)+'.jpeg'
-        # save imgUrl to file
-        urllib.request.urlretrieve(imgUrl, imgFileName)
         # load and resize
-        img = Image(imgFileName)
+        pilImg = pi.open(requests.get(imgUrl, stream=True).raw)
+        img = Image(pilImg)
         img.width = imgSizeWidth
         img.height = imgSizeHeight
         # insert
