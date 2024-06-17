@@ -153,16 +153,19 @@ imports:
  &#8226;   <a href="#enum">enum</a>
  &#8226;   <a href="#excel">excel</a>
  &#8226;   <a href="#excel.Excel">excel.Excel</a>
+ &#8226;   <a href="#fnmatch">fnmatch</a>
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#genericpath">genericpath</a>
  &#8226;   <a href="#heapq">heapq</a>
  &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#ipaddress">ipaddress</a>
  &#8226;   <a href="#keyword">keyword</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#operator">operator</a>
  &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#pathlib">pathlib</a>
  &#8226;   <a href="#posixpath">posixpath</a>
  &#8226;   <a href="#pyi_rth__tkinter.py">pyi_rth__tkinter.py</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
@@ -182,8 +185,16 @@ imports:
  &#8226;   <a href="#stat">stat</a>
  &#8226;   <a href="#tkinter_">tkinter_</a>
  &#8226;   <a href="#tkinter_.Tkinter">tkinter_.Tkinter</a>
+ &#8226;   <a href="#token">token</a>
+ &#8226;   <a href="#tokenize">tokenize</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#urllib">urllib</a>
+ &#8226;   <a href="#urllib.error">urllib.error</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
+ &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#urllib.response">urllib.response</a>
+ &#8226;   <a href="#urllib.robotparser">urllib.robotparser</a>
  &#8226;   <a href="#warnings">warnings</a>
  &#8226;   <a href="#weakref">weakref</a>
 
@@ -275,8 +286,7 @@ imported by:
   <a target="code" href="///C:/Users/gkwns/AppData/Local/Programs/Python/Python312/Lib/site-packages/PyInstaller/hooks/rthooks/pyi_rth_pkgutil.py" type="text/plain"><tt>pyi_rth_pkgutil.py</tt></a>
 <span class="moduletype">Script</span>  <div class="import">
 imports:
-    <a href="#_pyi_rth_utils">_pyi_rth_utils</a>
- &#8226;   <a href="#pathlib">pathlib</a>
+    <a href="#os">os</a>
  &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#pyimod02_importers">pyimod02_importers</a>
  &#8226;   <a href="#sys">sys</a>
@@ -336,6 +346,39 @@ imported by:
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
     <a href="#openpyxl.xml.functions">openpyxl.xml.functions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="'docutils.nodes'"></a>
+  <a target="code" href="" type="text/plain"><tt>'docutils.nodes'</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#setuptools._distutils.command.check">setuptools._distutils.command.check</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="'docutils.parsers'"></a>
+  <a target="code" href="" type="text/plain"><tt>'docutils.parsers'</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#setuptools._distutils.command.check">setuptools._distutils.command.check</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="'docutils.utils'"></a>
+  <a target="code" href="" type="text/plain"><tt>'docutils.utils'</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#setuptools._distutils.command.check">setuptools._distutils.command.check</a>
 
   </div>
 
@@ -3662,23 +3705,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="_pyi_rth_utils"></a>
-  <a target="code" href="///C:/Users/gkwns/AppData/Local/Programs/Python/Python312/Lib/site-packages/PyInstaller/fake-modules/_pyi_rth_utils/__init__.py" type="text/plain"><tt>_pyi_rth_utils</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#os">os</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="_queue"></a>
   <tt>_queue</tt> <span class="moduletype"><tt>C:\Users\gkwns\AppData\Local\Programs\Python\Python312\DLLs\_queue.pyd</tt></span>  <div class="import">
 imported by:
@@ -5548,6 +5574,12 @@ imported by:
   <a name="cPickle"></a>
   <a target="code" href="" type="text/plain"><tt>cPickle</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
+imports:
+    <a href="#cStringIO">cStringIO</a>
+ &#8226;   <a href="#copy_reg">copy_reg</a>
+
+  </div>
+  <div class="import">
 imported by:
     <a href="#pycparser.ply.yacc">pycparser.ply.yacc</a>
 
@@ -5559,8 +5591,14 @@ imported by:
   <a name="cStringIO"></a>
   <a target="code" href="" type="text/plain"><tt>cStringIO</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
+imports:
+    <a href="#copy_reg">copy_reg</a>
+
+  </div>
+  <div class="import">
 imported by:
-    <a href="#cffi.ffiplatform">cffi.ffiplatform</a>
+    <a href="#cPickle">cPickle</a>
+ &#8226;   <a href="#cffi.ffiplatform">cffi.ffiplatform</a>
 
   </div>
 
@@ -6573,6 +6611,7 @@ imported by:
  &#8226;   <a href="#unittest.case">unittest.case</a>
  &#8226;   <a href="#unittest.util">unittest.util</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
+ &#8226;   <a href="#urllib.robotparser">urllib.robotparser</a>
  &#8226;   <a href="#urllib3._collections">urllib3._collections</a>
  &#8226;   <a href="#urllib3.response">urllib3.response</a>
  &#8226;   <a href="#xml.etree.ElementTree">xml.etree.ElementTree</a>
@@ -6965,6 +7004,18 @@ imported by:
  &#8226;   <a href="#webbrowser">webbrowser</a>
  &#8226;   <a href="#xml.dom.xmlbuilder">xml.dom.xmlbuilder</a>
  &#8226;   <a href="#xml.etree.ElementInclude">xml.etree.ElementInclude</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="copy_reg"></a>
+  <a target="code" href="" type="text/plain"><tt>copy_reg</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#cPickle">cPickle</a>
+ &#8226;   <a href="#cStringIO">cStringIO</a>
 
   </div>
 
@@ -7967,6 +8018,17 @@ imports:
   <div class="import">
 imported by:
     <a href="#setuptools._distutils.dist">setuptools._distutils.dist</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="docutils"></a>
+  <a target="code" href="" type="text/plain"><tt>docutils</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#setuptools._distutils.command.check">setuptools._distutils.command.check</a>
 
   </div>
 
@@ -11198,6 +11260,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#glob">glob</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#pathlib">pathlib</a>
  &#8226;   <a href="#setuptools._distutils.filelist">setuptools._distutils.filelist</a>
  &#8226;   <a href="#setuptools.discovery">setuptools.discovery</a>
@@ -11719,7 +11782,6 @@ imported by:
 <span class="moduletype">Package</span>  <div class="import">
 imports:
     <a href="#enum">enum</a>
- &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
 
   </div>
   <div class="import">
@@ -11795,8 +11857,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#http">http</a>
- &#8226;   <a href="#requests.compat">requests.compat</a>
+    <a href="#requests.compat">requests.compat</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
   </div>
@@ -12005,6 +12066,7 @@ imports:
  &#8226;   <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib._bootstrap">importlib._bootstrap</a>
  &#8226;   <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
+ &#8226;   <a href="#importlib.machinery">importlib.machinery</a>
  &#8226;   <a href="#sys">sys</a>
  &#8226;   <a href="#warnings">warnings</a>
 
@@ -12158,6 +12220,7 @@ imported by:
     <a href="#cffi._imp_emulation">cffi._imp_emulation</a>
  &#8226;   <a href="#cffi.verifier">cffi.verifier</a>
  &#8226;   <a href="#ctypes.util">ctypes.util</a>
+ &#8226;   <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#packaging.tags">packaging.tags</a>
@@ -12774,7 +12837,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#urllib.parse">urllib.parse</a>
+    <a href="#main.py">main.py</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
  &#8226;   <a href="#urllib3.util.ssl_match_hostname">urllib3.util.ssl_match_hostname</a>
 
   </div>
@@ -17123,13 +17187,13 @@ imports:
  &#8226;   <a href="#openpyxl.reader.strings">openpyxl.reader.strings</a>
  &#8226;   <a href="#openpyxl.reader.workbook">openpyxl.reader.workbook</a>
  &#8226;   <a href="#openpyxl.styles.stylesheet">openpyxl.styles.stylesheet</a>
- &#8226;   <a href="#openpyxl.tests">openpyxl.tests</a>
  &#8226;   <a href="#openpyxl.utils.exceptions">openpyxl.utils.exceptions</a>
  &#8226;   <a href="#openpyxl.worksheet._read_only">openpyxl.worksheet._read_only</a>
  &#8226;   <a href="#openpyxl.worksheet._reader">openpyxl.worksheet._reader</a>
  &#8226;   <a href="#openpyxl.worksheet.table">openpyxl.worksheet.table</a>
  &#8226;   <a href="#openpyxl.xml.constants">openpyxl.xml.constants</a>
  &#8226;   <a href="#openpyxl.xml.functions">openpyxl.xml.functions</a>
+ &#8226;   <a href="#tests">tests</a>
  &#8226;   <a href="#warnings">warnings</a>
  &#8226;   <a href="#zipfile">zipfile</a>
 
@@ -17596,17 +17660,6 @@ imports:
 imported by:
     <a href="#openpyxl.styles.stylesheet">openpyxl.styles.stylesheet</a>
  &#8226;   <a href="#openpyxl.workbook.workbook">openpyxl.workbook.workbook</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="openpyxl.tests"></a>
-  <a target="code" href="" type="text/plain"><tt>openpyxl.tests</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
-imported by:
-    <a href="#openpyxl.reader.excel">openpyxl.reader.excel</a>
 
   </div>
 
@@ -19095,7 +19148,6 @@ imported by:
  &#8226;   <a href="#PIL.features">PIL.features</a>
  &#8226;   <a href="#_aix_support">_aix_support</a>
  &#8226;   <a href="#_distutils_hack">_distutils_hack</a>
- &#8226;   <a href="#_pyi_rth_utils">_pyi_rth_utils</a>
  &#8226;   <a href="#_sitebuiltins">_sitebuiltins</a>
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
@@ -19198,6 +19250,7 @@ imported by:
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
  &#8226;   <a href="#pyi_rth_pkgres.py">pyi_rth_pkgres.py</a>
+ &#8226;   <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
  &#8226;   <a href="#pyi_rth_setuptools.py">pyi_rth_setuptools.py</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#requests.auth">requests.auth</a>
@@ -19709,6 +19762,7 @@ imported by:
  &#8226;   <a href="#importlib.resources._legacy">importlib.resources._legacy</a>
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#pkg_resources._vendor.importlib_resources._common">pkg_resources._vendor.importlib_resources._common</a>
  &#8226;   <a href="#pkg_resources._vendor.importlib_resources._compat">pkg_resources._vendor.importlib_resources._compat</a>
  &#8226;   <a href="#pkg_resources._vendor.importlib_resources._legacy">pkg_resources._vendor.importlib_resources._legacy</a>
@@ -19719,7 +19773,6 @@ imported by:
  &#8226;   <a href="#pkg_resources._vendor.platformdirs.unix">pkg_resources._vendor.platformdirs.unix</a>
  &#8226;   <a href="#pkg_resources._vendor.zipp">pkg_resources._vendor.zipp</a>
  &#8226;   <a href="#pyi_rth_pkgres.py">pyi_rth_pkgres.py</a>
- &#8226;   <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
  &#8226;   <a href="#selenium.webdriver.common.driver_finder">selenium.webdriver.common.driver_finder</a>
  &#8226;   <a href="#selenium.webdriver.common.selenium_manager">selenium.webdriver.common.selenium_manager</a>
  &#8226;   <a href="#selenium.webdriver.remote.file_detector">selenium.webdriver.remote.file_detector</a>
@@ -19851,7 +19904,6 @@ imports:
  &#8226;   <a href="#pkg_resources._vendor.platformdirs.version">pkg_resources._vendor.platformdirs.version</a>
  &#8226;   <a href="#pkg_resources._vendor.platformdirs.windows">pkg_resources._vendor.platformdirs.windows</a>
  &#8226;   <a href="#pkg_resources._vendor.zipp">pkg_resources._vendor.zipp</a>
- &#8226;   <a href="#pkg_resources.extern">pkg_resources.extern</a>
  &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#plistlib">plistlib</a>
@@ -20720,9 +20772,9 @@ imports:
  &#8226;   <a href="#pkg_resources._vendor.platformdirs.unix">pkg_resources._vendor.platformdirs.unix</a>
  &#8226;   <a href="#pkg_resources._vendor.platformdirs.version">pkg_resources._vendor.platformdirs.version</a>
  &#8226;   <a href="#pkg_resources._vendor.platformdirs.windows">pkg_resources._vendor.platformdirs.windows</a>
- &#8226;   <a href="#pkg_resources._vendor.typing_extensions">pkg_resources._vendor.typing_extensions</a>
  &#8226;   <a href="#sys">sys</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#typing_extensions">typing_extensions</a>
 
   </div>
   <div class="import">
@@ -20896,17 +20948,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="pkg_resources._vendor.typing_extensions"></a>
-  <a target="code" href="" type="text/plain"><tt>pkg_resources._vendor.typing_extensions</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
-imported by:
-    <a href="#pkg_resources._vendor.platformdirs">pkg_resources._vendor.platformdirs</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="pkg_resources._vendor.zipp"></a>
   <a target="code" href="///C:/Users/gkwns/AppData/Local/Programs/Python/Python312/Lib/site-packages/pkg_resources/_vendor/zipp.py" type="text/plain"><tt>pkg_resources._vendor.zipp</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -20926,24 +20967,6 @@ imports:
 imported by:
     <a href="#pkg_resources">pkg_resources</a>
  &#8226;   <a href="#pkg_resources._vendor.importlib_resources._compat">pkg_resources._vendor.importlib_resources._compat</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="pkg_resources.extern"></a>
-  <a target="code" href="///C:/Users/gkwns/AppData/Local/Programs/Python/Python312/Lib/site-packages/pkg_resources/extern/__init__.py" type="text/plain"><tt>pkg_resources.extern</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#importlib.util">importlib.util</a>
- &#8226;   <a href="#pkg_resources">pkg_resources</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#pkg_resources">pkg_resources</a>
 
   </div>
 
@@ -25320,7 +25343,11 @@ imported by:
   <a target="code" href="///C:/Users/gkwns/AppData/Local/Programs/Python/Python312/Lib/site-packages/setuptools/_distutils/command/check.py" type="text/plain"><tt>setuptools._distutils.command.check</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#contextlib">contextlib</a>
+    <a href="#'docutils.nodes'">'docutils.nodes'</a>
+ &#8226;   <a href="#'docutils.parsers'">'docutils.parsers'</a>
+ &#8226;   <a href="#'docutils.utils'">'docutils.utils'</a>
+ &#8226;   <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#docutils">docutils</a>
  &#8226;   <a href="#setuptools._distutils.command">setuptools._distutils.command</a>
  &#8226;   <a href="#setuptools._distutils.core">setuptools._distutils.core</a>
  &#8226;   <a href="#setuptools._distutils.errors">setuptools._distutils.errors</a>
@@ -26669,9 +26696,9 @@ imported by:
 imports:
     <a href="#platform">platform</a>
  &#8226;   <a href="#setuptools._vendor.importlib_metadata">setuptools._vendor.importlib_metadata</a>
- &#8226;   <a href="#setuptools._vendor.typing_extensions">setuptools._vendor.typing_extensions</a>
  &#8226;   <a href="#sys">sys</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#typing_extensions">typing_extensions</a>
 
   </div>
   <div class="import">
@@ -27631,17 +27658,6 @@ imported by:
     <a href="#setuptools">setuptools</a>
  &#8226;   <a href="#setuptools._vendor.tomli._parser">setuptools._vendor.tomli._parser</a>
  &#8226;   <a href="#setuptools._vendor.tomli._re">setuptools._vendor.tomli._re</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="setuptools._vendor.typing_extensions"></a>
-  <a target="code" href="" type="text/plain"><tt>setuptools._vendor.typing_extensions</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
-imported by:
-    <a href="#setuptools._vendor.importlib_metadata._compat">setuptools._vendor.importlib_metadata._compat</a>
 
   </div>
 
@@ -29554,7 +29570,6 @@ imported by:
  &#8226;   <a href="#_distutils_hack">_distutils_hack</a>
  &#8226;   <a href="#_pydatetime">_pydatetime</a>
  &#8226;   <a href="#_pydecimal">_pydecimal</a>
- &#8226;   <a href="#_pyi_rth_utils">_pyi_rth_utils</a>
  &#8226;   <a href="#_sitebuiltins">_sitebuiltins</a>
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#ast">ast</a>
@@ -29936,6 +29951,17 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="tests"></a>
+  <a target="code" href="" type="text/plain"><tt>tests</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#openpyxl.reader.excel">openpyxl.reader.excel</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="textwrap"></a>
   <a target="code" href="///C:/Users/gkwns/AppData/Local/Programs/Python/Python312/Lib/textwrap.py" type="text/plain"><tt>textwrap</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -30096,6 +30122,7 @@ imported by:
  &#8226;   <a href="#unittest.case">unittest.case</a>
  &#8226;   <a href="#unittest.runner">unittest.runner</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#urllib.robotparser">urllib.robotparser</a>
  &#8226;   <a href="#urllib3.util.retry">urllib3.util.retry</a>
  &#8226;   <a href="#urllib3.util.timeout">urllib3.util.timeout</a>
  &#8226;   <a href="#uuid">uuid</a>
@@ -30319,6 +30346,7 @@ imported by:
 <span class="moduletype">SourceModule</span>  <div class="import">
 imported by:
     <a href="#inspect">inspect</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#tokenize">tokenize</a>
 
   </div>
@@ -30349,6 +30377,7 @@ imported by:
  &#8226;   <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#linecache">linecache</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#pydoc">pydoc</a>
  &#8226;   <a href="#setuptools._distutils.command.build_scripts">setuptools._distutils.command.build_scripts</a>
  &#8226;   <a href="#setuptools._distutils.core">setuptools._distutils.core</a>
@@ -30874,9 +30903,11 @@ imports:
 imported by:
     <a href="#PIL._typing">PIL._typing</a>
  &#8226;   <a href="#pkg_resources._vendor.packaging.metadata">pkg_resources._vendor.packaging.metadata</a>
+ &#8226;   <a href="#pkg_resources._vendor.platformdirs">pkg_resources._vendor.platformdirs</a>
  &#8226;   <a href="#selenium.webdriver.firefox.firefox_binary">selenium.webdriver.firefox.firefox_binary</a>
  &#8226;   <a href="#selenium.webdriver.firefox.firefox_profile">selenium.webdriver.firefox.firefox_profile</a>
  &#8226;   <a href="#selenium.webdriver.firefox.options">selenium.webdriver.firefox.options</a>
+ &#8226;   <a href="#setuptools._vendor.importlib_metadata._compat">setuptools._vendor.importlib_metadata._compat</a>
  &#8226;   <a href="#setuptools._vendor.packaging.metadata">setuptools._vendor.packaging.metadata</a>
  &#8226;   <a href="#setuptools.config._validate_pyproject.error_reporting">setuptools.config._validate_pyproject.error_reporting</a>
  &#8226;   <a href="#setuptools.config._validate_pyproject.formats">setuptools.config._validate_pyproject.formats</a>
@@ -31213,6 +31244,7 @@ imported by:
 <span class="moduletype">Package</span>  <div class="import">
 imported by:
     <a href="#email._header_value_parser">email._header_value_parser</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#selenium.webdriver.common.service">selenium.webdriver.common.service</a>
  &#8226;   <a href="#selenium.webdriver.common.utils">selenium.webdriver.common.utils</a>
  &#8226;   <a href="#selenium.webdriver.remote.remote_connection">selenium.webdriver.remote.remote_connection</a>
@@ -31220,6 +31252,7 @@ imported by:
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#urllib.response">urllib.response</a>
+ &#8226;   <a href="#urllib.robotparser">urllib.robotparser</a>
 
   </div>
 
@@ -31237,7 +31270,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#selenium.webdriver.common.service">selenium.webdriver.common.service</a>
+    <a href="#main.py">main.py</a>
+ &#8226;   <a href="#selenium.webdriver.common.service">selenium.webdriver.common.service</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
   </div>
@@ -31266,6 +31300,7 @@ imported by:
  &#8226;   <a href="#http.client">http.client</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#http.server">http.server</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
  &#8226;   <a href="#nturl2path">nturl2path</a>
  &#8226;   <a href="#pathlib">pathlib</a>
@@ -31276,6 +31311,7 @@ imported by:
  &#8226;   <a href="#setuptools._distutils.command.upload">setuptools._distutils.command.upload</a>
  &#8226;   <a href="#setuptools.config._validate_pyproject.formats">setuptools.config._validate_pyproject.formats</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#urllib.robotparser">urllib.robotparser</a>
  &#8226;   <a href="#urllib3._request_methods">urllib3._request_methods</a>
  &#8226;   <a href="#urllib3.poolmanager">urllib3.poolmanager</a>
  &#8226;   <a href="#xml.dom.xmlbuilder">xml.dom.xmlbuilder</a>
@@ -31326,6 +31362,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#pkg_resources._vendor.jaraco.context">pkg_resources._vendor.jaraco.context</a>
  &#8226;   <a href="#requests.compat">requests.compat</a>
  &#8226;   <a href="#selenium.webdriver.common.service">selenium.webdriver.common.service</a>
@@ -31334,6 +31371,7 @@ imported by:
  &#8226;   <a href="#setuptools._distutils.command.upload">setuptools._distutils.command.upload</a>
  &#8226;   <a href="#setuptools._vendor.jaraco.context">setuptools._vendor.jaraco.context</a>
  &#8226;   <a href="#setuptools.config._validate_pyproject.formats">setuptools.config._validate_pyproject.formats</a>
+ &#8226;   <a href="#urllib.robotparser">urllib.robotparser</a>
  &#8226;   <a href="#xml.dom.xmlbuilder">xml.dom.xmlbuilder</a>
  &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
 
@@ -31352,8 +31390,29 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#urllib.error">urllib.error</a>
+    <a href="#main.py">main.py</a>
+ &#8226;   <a href="#urllib.error">urllib.error</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="urllib.robotparser"></a>
+  <a target="code" href="///C:/Users/gkwns/AppData/Local/Programs/Python/Python312/Lib/urllib/robotparser.py" type="text/plain"><tt>urllib.robotparser</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#urllib">urllib</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
+ &#8226;   <a href="#urllib.request">urllib.request</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
 
   </div>
 
