@@ -7,12 +7,9 @@ from tkinter import messagebox as msgbox
 ### about project files
 from cralwer import NaverSmartStoreCralwer
 from excel import Excel
-import GLOBAL_VAL
 
 ### ect.
 from datetime import datetime
-import os
-import sys
 import traceback    # pring errer line
 
 class Tkinter:
@@ -32,7 +29,8 @@ class Tkinter:
         self.window = tk.Tk("SS-Crawler")
         self.window.title("SS-Crawler for MKShop")
         self.window.geometry("450x100")
-        icon = tk.PhotoImage(file=GLOBAL_VAL.resource_path("./ss-crawler/resources/mk.png"))
+        # icon = tk.PhotoImage(file=GLOBAL_VAL.resource_path("./ss-crawler/resources/mk.png"))
+        icon = tk.PhotoImage(file="./ss-crawler/resources/mk.png")
         self.window.iconphoto(True, icon)
 
         ### Keyboard Event
