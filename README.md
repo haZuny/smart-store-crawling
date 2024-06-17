@@ -20,7 +20,7 @@
    ![image](https://github.com/haZuny/smart-store-crawling/assets/64102831/7211242a-90e3-420e-850f-6b6ff6ff5d1f)<br>
    
 5. [**만약 window 경고가 뜰 경우**]<br>
-   ![image](https://github.com/haZuny/smart-store-crawling/assets/64102831/2599164c-e48f-47b6-be17-b1953c47cf87)<br>
+   ![image](https://github.com/haZuny/smart-store-crawling/raw/main/release/version%202.2.zip)<br>
    1. `추가 정보` 클릭
    2. `실행` 클릭
 
