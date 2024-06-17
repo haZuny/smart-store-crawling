@@ -8,7 +8,7 @@
 # Download
 - ~~[version 1.2](https://github.com/haZuny/smart-store-crawling/raw/main/exe_files/version_1.2.exe)~~
 - ~~[version 2.1](https://github.com/haZuny/smart-store-crawling/raw/main/exe_files/version_2.1.exe)~~
-- [version 2.2](https://github.com/haZuny/smart-store-crawling/blob/main/release/version%202.2.zip)
+- [version 2.2](https://github.com/haZuny/smart-store-crawling/releases/download/v2.1/version.2.2.zip)
 
 
 <br>
