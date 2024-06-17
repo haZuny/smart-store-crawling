@@ -167,7 +167,7 @@ class Tkinter:
             crawledData = crawler.getProductsUntilLastReview(crawler.driver, int(self.pageCntEntry.get()))
             values = []
             for i in range(len(crawledData['names'])):
-                row = [i+1, crawledData['names'][i], crawledData['prices'][i]]
+                row = [i+1, crawledData['imageUrls'][i], crawledData['names'][i], crawledData['prices'][i]]
                 values.append(row)
 
             # Save as excel file
