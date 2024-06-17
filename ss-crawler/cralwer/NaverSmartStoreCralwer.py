@@ -12,6 +12,8 @@ class NaverSmartStoreCralwer(Cralwer.Cralwer):
         self.nextBtnsXpath_form = '//*[@id="CategoryProducts"]/div[3]/*'
         # beautifulSoup find style about a name of product
         self.productNameStyle = 'div#CategoryProducts>ul>li._3S7Ho5J2Ql>div._1vVKEk_wsi>strong._1Zvjahn0GA'
+        # beautifulSoup find style about a image of product
+        self.productImageStryle = 'div#CategoryProducts>ul>li._3S7Ho5J2Ql>div.gFNkPpljgY>div._2JNWBGd-04>img._25CKxIKjAk'
         # beautifulSoup find style about a price of product
         self.productPriceStyle = 'div#CategoryProducts>ul>li._3S7Ho5J2Ql>div._1vVKEk_wsi>div>strong._22XUYkkUGJ>span._3_9J443eIx'
         # beautifulSoup find style about the product list of current page.

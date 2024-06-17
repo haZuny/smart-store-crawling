@@ -19,6 +19,8 @@ class Cralwer():
     nextBtnsXpath_form = ''
     # beautifulSoup find style about a name of product
     productNameStyle = ''
+    # beautifulSoup find style about a image of product
+    productImageStryle = ''
     # beautifulSoup find style about a price of product
     productPriceStyle = ''
     # beautifulSoup find style about the product list of current page.
@@ -60,6 +62,14 @@ class Cralwer():
         for nameTag in nameTags:
             list.append(nameTag.string)
         return list
+    
+    # get a list on product image Urls
+    def getProductImageUrls(self, pageSource, productImageStryle):
+        imageTags = pageSource.select(productImageStryle)
+        list = []
+        for imageTag in imageTags:
+            list.append(imageTag['src'])
+        return list
 
     # get a list of puduct prices
     def getPruductPrices(self, pageSource, productPriceStyle):
@@ -82,21 +92,25 @@ class Cralwer():
 
     def getProductsUntilLastReview(self, driver, max_page):
         nameList = []
+        imgList = []
         priceList = []
         reviewList = []
 
         # 전체 이름, 가격, 리뷰 여부 얻어오기
         nameList += self.getPruductNames(self.pageSource, self.productNameStyle)
+        imgList += self.getProductImageUrls(self.pageSource, self.productImageStryle)
         priceList += self.getPruductPrices(self.pageSource, self.productPriceStyle)
         reviewList += self.getReviewBoolean(self.pageSource, self.productListStyle, self.reviewElement)
 
         # 마지막 페이지가 존재하고, 최대 페이지 이전이면 다음 페이지로 이동후 크롤링
         while(self.updateNextPageSource(driver, self.nextBtnsXpath_form) and self.currentPageCnt < max_page):
             nameList += self.getPruductNames(self.pageSource, self.productNameStyle)
+            imgList += self.getProductImageUrls(self.pageSource, self.productImageStryle)
             priceList += self.getPruductPrices(self.pageSource, self.productPriceStyle)
             reviewList += self.getReviewBoolean(self.pageSource, self.productListStyle, self.reviewElement)
         if (self.currentPageCnt <= max_page):
             nameList += self.getPruductNames(self.pageSource, self.productNameStyle)
+            imgList += self.getProductImageUrls(self.pageSource, self.productImageStryle)
             priceList += self.getPruductPrices(self.pageSource, self.productPriceStyle)
             reviewList += self.getReviewBoolean(self.pageSource, self.productListStyle, self.reviewElement)
         
@@ -110,6 +124,7 @@ class Cralwer():
         # 각 요소 반환
         dict = {}
         dict['names'] = nameList[:lastIdx+1]
+        dict['imageUrls'] = imgList[:lastIdx+1]
         dict['prices'] = priceList[:lastIdx+1]
 
         return dict
