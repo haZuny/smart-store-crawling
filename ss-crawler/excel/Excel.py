@@ -71,17 +71,17 @@ class Excel:
                 length = max(len(str(cell.value))*multySize for cell in column_cells)
                 self.ws.column_dimensions[column_cells[0].column_letter].width = length
 
-    ### set column align
-    def alignColumn(self, align):
+    ### set cell align
+    def alignCell(self, horizontal, vertical):
         for column_cells in self.ws.columns:
             ## align center
             for cell in self.ws[column_cells[0].column_letter]:
-                cell.alignment = openpyxl.styles.Alignment(horizontal=align)
+                cell.alignment = openpyxl.styles.Alignment(horizontal=horizontal, vertical=vertical)
 
     
     ### create excel file and insert data
     def createAndInsertData(self, row, column, rowGap, values):
         self.insertData(row, column, rowGap, values)
-        self.autoFitColumn(1.2)
-        self.alignColumn('center')
+        self.autoFitColumn(1.5)
+        self.alignCell('center', 'center')
         self.save()
